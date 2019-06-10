@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="nightsteed-ads-admob" version="1.0.3">
-    <name>NightsteedAdsCommon</name>
-    <description>Nightsteed Ads API</description>
-    <license>@2018, NightSteed All Rights reserved</license>
+        id="olbg-ads-admob" version="1.0.3">
+    <name>OLBG admob</name>
+    <description>Admob implementation for OLBG mobile</description>
+    <license>@2019, OLBG All Rights reserved</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,nightsteed,plugins</keywords>
     <js-module src="www/nightsteed_utils.js" name="NightSteedUtils">
         <runs/>
