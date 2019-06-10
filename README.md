@@ -2,7 +2,7 @@
 
 ## Install
 ```
-cordova plugin add https://github.com/NightSteedSC/nightsteed-ads-admob.git
+cordova plugin add https://github.com/yeahstyle/olbg-admob.git
 ```
 
 ## Configuring AdMob
