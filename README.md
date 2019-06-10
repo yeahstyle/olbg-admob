@@ -1,4 +1,4 @@
-# NightSteed Admob Plugin
+# OLBG Admob Plugin
 
 ## Install
 ```
