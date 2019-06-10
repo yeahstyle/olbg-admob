@@ -1,0 +1,26 @@
+android {
+
+	// defaultConfig {
+	//     multiDexEnabled true
+	// }
+
+	dependencies {
+	    compile 'com.unity3d.ads:unity-ads:2+'
+	    compile 'com.google.ads.mediation:unity:2+'
+	}
+
+	// dexOptions {
+	//     javaMaxHeapSize "2g"
+	// }
+
+
+
+	// dependencies {
+	//     compile 'com.android.support:appcompat-v7:27.0.1'
+	//     compile 'com.google.android.gms:play-services-ads:17.0.0'
+ //        compile 'com.android.support:multidex:1.0.3'
+	//     compile 'com.unity3d.ads:unity-ads:2.3.0'
+	//     compile 'com.google.ads.mediation:unity:2.2.1.1'
+	// }
+
+}

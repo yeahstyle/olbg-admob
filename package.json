@@ -1,0 +1,69 @@
+{
+  "_from": "nightsteed-ads-admob",
+  "_id": "nightsteed-ads-admob@1.0.3",
+  "_inBundle": false,
+  "_integrity": "sha512-1XE09z+ViBxVtXK+JuYq2VhfHPQc8qnBbYRrqnQ/kIlQh9yECS1CoxLpeNVCenwumoRJNevBlAJF4JGdg0KoIg==",
+  "_location": "/nightsteed-ads-admob",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "nightsteed-ads-admob",
+    "name": "nightsteed-ads-admob",
+    "escapedName": "nightsteed-ads-admob",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nightsteed-ads-admob/-/nightsteed-ads-admob-1.0.3.tgz",
+  "_shasum": "f6f687ff948e70753afc19112b8ca9928233f7b6",
+  "_spec": "nightsteed-ads-admob",
+  "_where": "/home/lblum/develop/upwork/Alvaro/admob-fixing_new",
+  "author": {
+    "name": "NightSteed"
+  },
+  "bugs": {
+    "url": "https://github.com/NightSteedSC/nightsteed-ads-admob/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "nightsteed-ads-admob",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "deprecated": false,
+  "description": "NightSteed Ads API",
+  "devDependencies": {
+    "xml2js": "^0.4.19"
+  },
+  "homepage": "https://github.com/NightSteedSC/nightsteed-ads-admob#readme",
+  "keywords": [
+    "cordova",
+    "ads",
+    "banner",
+    "interstitial",
+    "rewarded video",
+    "monetization",
+    "ad",
+    "nightseed",
+    "plugins",
+    "ecosystem:cordova"
+  ],
+  "license": "@2018, NightSteed All Rights reserved",
+  "name": "nightsteed-ads-admob",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NightSteedSC/nightsteed-ads-admob.git"
+  },
+  "url": "https://github.com/NightSteedSC/nightsteed-ads-admob.git",
+  "version": "1.0.3"
+}
