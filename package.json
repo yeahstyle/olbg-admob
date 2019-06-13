@@ -1,16 +1,16 @@
 {
-  "_from": "nightsteed-ads-admob",
-  "_id": "nightsteed-ads-admob@1.0.3",
+  "_from": "olbg-ads-admob",
+  "_id": "olbg-ads-admob",
   "_inBundle": false,
   "_integrity": "sha512-1XE09z+ViBxVtXK+JuYq2VhfHPQc8qnBbYRrqnQ/kIlQh9yECS1CoxLpeNVCenwumoRJNevBlAJF4JGdg0KoIg==",
-  "_location": "/nightsteed-ads-admob",
+  "_location": "/olbg-ads-admob",
   "_phantomChildren": {},
   "_requested": {
     "type": "tag",
     "registry": true,
-    "raw": "nightsteed-ads-admob",
-    "name": "nightsteed-ads-admob",
-    "escapedName": "nightsteed-ads-admob",
+    "raw": "olbg-ads-admob",
+    "name": "olbg-ads-admob",
+    "escapedName": "olbg-ads-admob",
     "rawSpec": "",
     "saveSpec": null,
     "fetchSpec": "latest"
@@ -27,11 +27,11 @@
     "name": "NightSteed"
   },
   "bugs": {
-    "url": "https://github.com/NightSteedSC/nightsteed-ads-admob/issues"
+    "url": "https://github.com/yeahstyle/olbg-admob/issues"
   },
   "bundleDependencies": false,
   "cordova": {
-    "id": "nightsteed-ads-admob",
+    "id": "olbg-ads-admob",
     "platforms": [
       "android",
       "ios"
@@ -41,11 +41,11 @@
     "lodash": "^4.17.11"
   },
   "deprecated": false,
-  "description": "NightSteed Ads API",
+  "description": "OLBG Ads API",
   "devDependencies": {
     "xml2js": "^0.4.19"
   },
-  "homepage": "https://github.com/NightSteedSC/nightsteed-ads-admob#readme",
+  "homepage": "https://github.com/yeahstyle/olbg-admob#readme",
   "keywords": [
     "cordova",
     "ads",
@@ -54,16 +54,15 @@
     "rewarded video",
     "monetization",
     "ad",
-    "nightseed",
     "plugins",
     "ecosystem:cordova"
   ],
-  "license": "@2018, NightSteed All Rights reserved",
-  "name": "nightsteed-ads-admob",
+  "license": "@2019, OLBG All Rights reserved",
+  "name": "olbg-ads-admob",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NightSteedSC/nightsteed-ads-admob.git"
+    "url": "git+https://github.com/yeahstyle/olbg-admob.git"
   },
-  "url": "https://github.com/NightSteedSC/nightsteed-ads-admob.git",
-  "version": "1.0.3"
+  "url": "https://github.com/yeahstyle/olbg-admob.git",
+  "version": "1.0.0"
 }
