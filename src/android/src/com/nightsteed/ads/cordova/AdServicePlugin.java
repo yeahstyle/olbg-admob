@@ -7,6 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+
+
+
+import com.google.android.gms.ads.AdView;
 import com.nightsteed.ads.AdBanner;
 import com.nightsteed.ads.AdBanner.BannerSize;
 import com.nightsteed.ads.AdInterstitial;
@@ -44,6 +50,9 @@ public class AdServicePlugin extends CordovaPlugin implements
     protected CallbackContext _bannerListener;
     protected CallbackContext _interstitialListener;
     protected CallbackContext _rewardedVideoListener;
+    // private static final boolean CORDOVA_MIN_4 = Integer.valueOf(CordovaWebView.CORDOVA_VERSION.split("\\.")[0]) >= 4;
+    private static final boolean CORDOVA_MIN_4 = true;
+    private ViewGroup parentView;
 
     protected void pluginInitialize() {
         _service = new AdServiceAdMob();
@@ -448,26 +457,75 @@ public class AdServicePlugin extends CordovaPlugin implements
     }
 
     protected void layoutBanner(BannerData data) {
-        if (data.banner == null || data.banner.getView().getParent() == null) {
-            return;
+// -----------------------------
+        AdView adView = (AdView)(data.banner.getView());
+        if (CORDOVA_MIN_4) {
+            ViewGroup wvParentView = (ViewGroup)getWebView().getParent();
+            if (parentView == null) {
+                parentView = new LinearLayout(webView.getContext());
+            }
+            if (wvParentView != null && wvParentView != parentView) {
+                wvParentView.removeView(getWebView());
+                ((LinearLayout) parentView).setOrientation(LinearLayout.VERTICAL);
+                parentView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 0.0F));
+                getWebView().setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0F));
+                parentView.addView(getWebView());
+                cordova.getActivity().setContentView(parentView);
         }
 
-        ViewGroup vg = getViewGroup();
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) data.banner.getView().getLayoutParams();
-        layoutParams.width = data.banner.getWidth();
-        layoutParams.height = data.banner.getHeight();
+        } else {
+            parentView = (ViewGroup) ((ViewGroup) webView).getParent();
+        }
 
         if (data.layout == BannerLayout.CUSTOM) {
-            layoutParams.leftMargin = (int) data.x;
-            layoutParams.topMargin = (int) data.y;
+            // layoutParams.leftMargin = (int) data.x;
+            // layoutParams.topMargin = (int) data.y;
         } else if (data.layout == BannerLayout.TOP_CENTER) {
-            layoutParams.leftMargin = (int) (vg.getWidth() * 0.5 - layoutParams.width * 0.5);
-            layoutParams.topMargin = 0;
+            // layoutParams.leftMargin = (int) (vg.getWidth() * 0.5 - layoutParams.width * 0.5);
+            // layoutParams.topMargin = 0;
+            parentView.addView(adView, 0);
         } else {
-            layoutParams.leftMargin = (int) (vg.getWidth() * 0.5 - layoutParams.width * 0.5);
-            layoutParams.topMargin = vg.getHeight() - layoutParams.height;
+            parentView.addView(adView);
+            // layoutParams.leftMargin = (int) (vg.getWidth() * 0.5 - layoutParams.width * 0.5);
+            // layoutParams.topMargin = vg.getHeight() - layoutParams.height;
         }
-        vg.requestLayout();
+        // if (bannerAtTop) {
+        //     parentView.addView(adView, 0);
+        // } else {
+        //     parentView.addView(adView);
+        // }
+
+
+
+
+        parentView.bringToFront();
+        parentView.requestLayout();
+
+        adView.setVisibility( View.VISIBLE );
+
+
+// -----------------------------
+
+        // if (data.banner == null || data.banner.getView().getParent() == null) {
+        //     return;
+        // }
+
+        // ViewGroup vg = getViewGroup();
+        // FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) data.banner.getView().getLayoutParams();
+        // layoutParams.width = data.banner.getWidth();
+        // layoutParams.height = data.banner.getHeight();
+
+        // if (data.layout == BannerLayout.CUSTOM) {
+        //     layoutParams.leftMargin = (int) data.x;
+        //     layoutParams.topMargin = (int) data.y;
+        // } else if (data.layout == BannerLayout.TOP_CENTER) {
+        //     layoutParams.leftMargin = (int) (vg.getWidth() * 0.5 - layoutParams.width * 0.5);
+        //     layoutParams.topMargin = 0;
+        // } else {
+        //     layoutParams.leftMargin = (int) (vg.getWidth() * 0.5 - layoutParams.width * 0.5);
+        //     layoutParams.topMargin = vg.getHeight() - layoutParams.height;
+        // }
+        // vg.requestLayout();
     }
 
     protected ViewGroup getViewGroup() {
@@ -515,6 +573,15 @@ public class AdServicePlugin extends CordovaPlugin implements
 
     protected String getId(CordovaArgs args) {
         return args.optString(0);
+    }
+
+
+    private View getWebView() {
+        try {
+            return (View) webView.getClass().getMethod("getView").invoke(webView);
+        } catch (Exception e) {
+            return (View) webView;
+        }
     }
 
 };
