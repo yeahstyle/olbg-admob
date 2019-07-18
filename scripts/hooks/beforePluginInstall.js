@@ -10,8 +10,7 @@ var exec = require('child_process').exec;
 var package_name = 'xml2js';
 
 module.exports = function (context) {
-    var Q = context.requireCordovaModule('q');
-    var deferral = new Q.defer();
+    var deferral = require('q').defer();
 
     console.log('installing external dependencies via npm');
 
